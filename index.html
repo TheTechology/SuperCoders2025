@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arduino Kids – Aventură Neon (9–11 ani)</title>
-<meta name="description" content="Suport de curs super-colorat și animat pentru copiii de 9–11 ani care descoperă Arduino pentru prima dată."/>
+<title>Arduino Kids – Aventură Neon (9–11 ani) + Q&A</title>
+<meta name="description" content="Suport de curs super-colorat și animat pentru copiii de 9–11 ani care descoperă Arduino pentru prima dată. Include proiecte demo și 20 de întrebări cu răspuns flip-card."/>
 <style>
 /* ===== THEME: NEON CANDY ===== */
 :root{
@@ -148,6 +148,21 @@ footer{margin:42px 0 22px;color:#b7c7ff;text-align:center;font-size:14px}
 
 /* Rainbow separators */
 .hr{height:2px;border:0;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c1));opacity:.8;border-radius:999px}
+
+/* ===== Q&A Flip Cards ===== */
+.qa-lead{color:var(--mut);text-align:center}
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+.qa-card{perspective:1000px}
+.qa-inner{position:relative;background:linear-gradient(180deg,#141a3d,#10132f);border:2px solid #ffffff10;border-radius:18px;
+  padding:20px;min-height:180px;transition:transform .8s;transform-style:preserve-3d;box-shadow:0 8px 20px #0005}
+.qa-card.flipped .qa-inner{transform:rotateY(180deg)}
+.qa-face{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.qa-back{transform:rotateY(180deg);background:linear-gradient(180deg,#0f163d,#0a0e2f);border-radius:16px;padding:14px}
+.qa-question{font-weight:900;font-size:18px;color:var(--c4);text-align:center}
+.qa-answer{font-size:17px;color:var(--c3);padding:8px 14px;text-align:center}
+.qa-btn{margin-top:12px;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:800;font-family:inherit;
+  background:linear-gradient(90deg,var(--c2),#14b8ff);color:#001b2b;transition:transform .2s, box-shadow .3s}
+.qa-btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px #00eaff55}
 </style>
 </head>
 <body>
@@ -158,6 +173,7 @@ footer{margin:42px 0 22px;color:#b7c7ff;text-align:center;font-size:14px}
     <a class="pill" href="#placa">Placa</a>
     <a class="pill" href="#proiecte">Proiecte</a>
     <a class="pill" href="#curiozitati">Curiozități</a>
+    <a class="pill" href="#qa">Întrebări & Răspunsuri</a>
   </div>
 </header>
 
@@ -435,7 +451,7 @@ footer{margin:42px 0 22px;color:#b7c7ff;text-align:center;font-size:14px}
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="ghid">
     <h2>Mic ghid vizual – „unde pun ce?”</h2>
     <p class="lead">Când trecem la practică, pinurile sunt prizele pentru fire.</p>
     <div class="grid">
@@ -449,7 +465,7 @@ footer{margin:42px 0 22px;color:#b7c7ff;text-align:center;font-size:14px}
       <div class="card">
         <h3>Ieșiri (OUTPUT)</h3>
         <ul>
-          <li>Aprindem <strong>LED</strong>, pornim <strong>buzzer</strong>, <strong>motor</strong>, sau afisăm pe <strong>ecran</strong>.</li>
+          <li>Aprindem <strong>LED</strong>, pornim <strong>buzzer</strong>, <strong>motor</strong>, sau afișăm pe <strong>ecran</strong>.</li>
           <li>Alimentare: <span class="kbd">GND</span> (minus), <span class="kbd">5V</span>, <span class="kbd">3.3V</span>.</li>
         </ul>
       </div>
@@ -462,6 +478,117 @@ footer{margin:42px 0 22px;color:#b7c7ff;text-align:center;font-size:14px}
           <li>Test ➜ Ajustez până iese!</li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <div class="hr"></div>
+
+  <!-- ====== Q&A SECTION ====== -->
+  <section id="qa" class="section">
+    <h2>🎯 Verifică ce ai învățat – Întrebări & Răspunsuri</h2>
+    <p class="qa-lead">Apasă pe „💡 Află răspunsul” pentru a întoarce cardul și a vedea explicația. Simplu, clar și jucăuș 😊</p>
+
+    <div class="qa-grid">
+      <!-- 1 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">1️⃣ Ce este Arduino?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">O mică placă electronică ce poate simți lumea și o poate controla (lumini, sunete, motoare)!</div></div>
+      </div></div>
+      <!-- 2 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">2️⃣ Ce face LED-ul?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">LED-ul este o luminiță care arată dacă ceva e pornit sau oprit 💡</div></div>
+      </div></div>
+      <!-- 3 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">3️⃣ Ce înseamnă „programare”?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Să-i spui calculatorului, pas cu pas, ce să facă. 🧠</div></div>
+      </div></div>
+      <!-- 4 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">4️⃣ Ce e un senzor?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">O piesă care „simte” lucruri – lumină, temperatură, apă, distanță 🌡️</div></div>
+      </div></div>
+      <!-- 5 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">5️⃣ Ce este un buton?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Un mic întrerupător pe care îl apăsăm ca să trimitem un semnal către placă 🖲️</div></div>
+      </div></div>
+      <!-- 6 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">6️⃣ Ce face pinul 13?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Este conectat la LED-ul de pe placă – primul care clipește! ✨</div></div>
+      </div></div>
+      <!-- 7 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">7️⃣ Ce este un cod?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Instrucțiunile pe care Arduino le urmează pas cu pas 🧩</div></div>
+      </div></div>
+      <!-- 8 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">8️⃣ Ce este un circuit?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Drumul pe unde circulă curentul electric 🔌</div></div>
+      </div></div>
+      <!-- 9 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">9️⃣ Ce face senzorul de lumină?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Măsoară câtă lumină este în jur și poate aprinde automat o lampă 🌙</div></div>
+      </div></div>
+      <!-- 10 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">🔟 Ce este un buzzer?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Un mic difuzor care poate cânta sau anunța ceva 🔊</div></div>
+      </div></div>
+      <!-- 11 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">11️⃣ Ce înseamnă „digital”?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Doar două stări: pornit (1) sau oprit (0) 💻</div></div>
+      </div></div>
+      <!-- 12 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">12️⃣ Ce înseamnă „analogic”?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Poate măsura „cât de mult” – de exemplu câtă lumină e în cameră 🌤️</div></div>
+      </div></div>
+      <!-- 13 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">13️⃣ Ce face funcția setup()?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Pornește totul la început, ca o încălzire 🔧</div></div>
+      </div></div>
+      <!-- 14 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">14️⃣ Ce face funcția loop()?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Repetă mereu aceiași pași – ca un cântec în buclă 🎶</div></div>
+      </div></div>
+      <!-- 15 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">15️⃣ Ce înseamnă delay(500)?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Așteaptă o jumătate de secundă (500 milisecunde) ⏱️</div></div>
+      </div></div>
+      <!-- 16 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">16️⃣ Ce poți controla cu Arduino?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Lumini, sunete, motoare, ecrane, senzori… aproape orice! ⚙️</div></div>
+      </div></div>
+      <!-- 17 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">17️⃣ Ce este un proiect?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">O idee pe care o aduci la viață cu ajutorul tehnologiei 🚀</div></div>
+      </div></div>
+      <!-- 18 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">18️⃣ Poate Arduino vorbi?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Nu vorbește ca oamenii, dar poate trimite semnale și sunete 🎵</div></div>
+      </div></div>
+      <!-- 19 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">19️⃣ Ce este un senzor de distanță?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Măsoară cât de aproape este un obiect – ca un sonar 📏</div></div>
+      </div></div>
+      <!-- 20 -->
+      <div class="qa-card"><div class="qa-inner">
+        <div class="qa-face"><div class="qa-question">20️⃣ De ce ne place Arduino?</div><button class="qa-btn">💡 Află răspunsul</button></div>
+        <div class="qa-face qa-back"><div class="qa-answer">Pentru că putem învăța, experimenta și crea lucruri minunate împreună! 💚</div></div>
+      </div></div>
     </div>
   </section>
 
@@ -495,6 +622,14 @@ document.querySelectorAll('.confetti').forEach(box=>{
     p.style.setProperty('--r', (Math.random()*40-20)+'deg');
     box.appendChild(p);
   }
+});
+
+/* Q&A flip handlers */
+document.querySelectorAll('.qa-card .qa-btn').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    const card = e.target.closest('.qa-card');
+    card.classList.toggle('flipped');
+  });
 });
 </script>
 </body>
