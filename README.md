@@ -1,5 +1,5 @@
 # 🧠 SuperCoders – Ediția 14  
-**Asociația Grupul Verde** · *program finanțat de [Fundația Orange](https://fundatiaorange.ro/)*  
+**Asociația Grupul Verde** · *program finanțat de [Fundația Orange](https://www.fundatiaorange.ro//)*  
 
 [![Status](https://img.shields.io/badge/status-activ-brightgreen)](#) 
 [![Vârste](https://img.shields.io/badge/vârste-9--14-ff69b4)](#) 
